@@ -3,11 +3,15 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './common/header/header.component';
+//import { NewCmpComponent } from './new-cmp/new-cmp.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent
+//    NewCmpComponent
   ],
   imports: [
     BrowserModule
