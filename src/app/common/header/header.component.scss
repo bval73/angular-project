@@ -25,14 +25,14 @@
   
   
     .btn-bwm-search {
-      border-color: #F44336;
+      border-color: $main-color;
       color: $main-color;
   
   
       &:hover, &:focus, &:active {
         background-color: transparent;
-        border-color: #F44336 !important;
-        color: #F44336 !important;
+        border-color: $main-color !important;
+        color: $main-color !important;
         box-shadow: none;
       }
     }
