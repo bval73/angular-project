@@ -26,7 +26,7 @@ export class RentalListComponent implements OnInit {
       },
 
       ()=>{
-        console.log("completed");
+//        console.log("completed");
       }
     );
   }
