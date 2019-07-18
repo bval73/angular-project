@@ -11,6 +11,7 @@ import { RentalComponent } from './rental/rental.component';
 
 import {RentalModule} from './rental/rental.module';
 
+
 //import { NewCmpComponent } from './new-cmp/new-cmp.component';
 
 
