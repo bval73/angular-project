@@ -8,8 +8,6 @@ import { CamelizePipe } from 'ngx-pipes';
 
 import { MapService } from './map.service';
 
-//google map key
-//AIzaSyD-tsuo3-7P6MHm1ehk53rauJzav_OfhPM
 
 @NgModule({
   declarations: [
@@ -20,7 +18,7 @@ import { MapService } from './map.service';
   ],
   imports: [
     AgmCoreModule.forRoot({
-        apiKey: 'AIzaSyD-tsuo3-7P6MHm1ehk53rauJzav_OfhPM'
+        apiKey: 'add your key'
     }),
     CommonModule
   ],
