@@ -4,8 +4,6 @@ import { AgmCoreModule } from '@agm/core';
 import { CommonModule } from '@angular/common';
 
 import { CamelizePipe } from 'ngx-pipes';
-
-
 import { MapService } from './map.service';
 
 @NgModule({
