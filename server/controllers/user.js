@@ -7,7 +7,7 @@ exports.auth = function(req, res){
     const {email, password} = req.body // destructure object
 
     if(!password || !email){
-        return res.status(422).send({errors: [{title: 'Data missing', details: 'Provide email and password'}]});
+        return res.status(422).send({errors: [{title: 'Data missing', detail: 'Provide email and password'}]});
     }
 
     User.findOne({email}, function(err, user){
@@ -16,7 +16,7 @@ exports.auth = function(req, res){
         }
 
         if(!user){
-            return res.status(422).send({errors: [{title: 'Invalid user', details: 'User does not exist'}]});
+            return res.status(422).send({errors: [{title: 'Invalid user', detail: 'User does not exist'}]});
         }
 
         if(user.hasSamePassword(password)){
@@ -27,7 +27,7 @@ exports.auth = function(req, res){
 
               return res.json(token);
         }else{
-            return res.status(422).send({errors: [{title: 'Invalid data', details: 'Incorrect email of password'}]});
+            return res.status(422).send({errors: [{title: 'Invalid data', detail: 'Incorrect email or password'}]});
         }
 
     });
@@ -37,11 +37,11 @@ exports.register = function(req, res){
     const {username, email, password, passwordConfirmation} = req.body // destructure object
     
     if(!password || !email){
-        return res.status(422).send({errors: [{title: 'Data missing', details: 'Provide email and password'}]});
+        return res.status(422).send({errors: [{title: 'Data missing', detail: 'Provide email and password'}]});
     }
 
     if(password !== passwordConfirmation){
-        return res.status(422).send({errors: [{title: 'Invalid password', details: 'Password is not the same as confirmation'}]});
+        return res.status(422).send({errors: [{title: 'Invalid password', detail: 'Password is not the same as confirmation'}]});
     }
 // same as User.findOne({email: email});
     User.findOne({email}, function(err, existingUser) {
@@ -50,7 +50,7 @@ exports.register = function(req, res){
         }
 
         if(existingUser){
-            return res.status(422).send({errors: [{title: 'Email', details: 'That email is already in use'}]});
+            return res.status(422).send({errors: [{title: 'Email', detail: 'That email is already in use'}]});
         }
 
         const user = new User({
@@ -64,7 +64,7 @@ exports.register = function(req, res){
                 return res.status(422).send({errors: normalizeErrors(err.errors)});
             }
             return res.json({'registered': true});
-        })
+        });
     })
 }
 
@@ -96,5 +96,5 @@ function parseToken(token){
 }
 
 function notAuthorized(res){
-    return res.status(401).send({errors: [{title: 'You are not authorized', details: 'You need to login to gain access'}]});
+    return res.status(401).send({errors: [{title: 'You are not authorized', detail: 'You need to login to gain access'}]});
 }
