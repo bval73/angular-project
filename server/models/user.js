@@ -24,7 +24,8 @@ const userSchema = new Schema({
         max: [32, 'Too long max character is 32 charcter'],
         required: 'Password is required'
     },
-    rentals: [{type: Schema.Types.ObjectId, ref: 'Rental'}]
+    rentals: [{type: Schema.Types.ObjectId, ref: 'Rental'}],
+    bookings: [{type: Schema.Types.ObjectId, ref: 'Booking'}]
 });
 
 //check if password is the same as password on file
