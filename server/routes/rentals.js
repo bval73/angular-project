@@ -13,8 +13,8 @@ router.get('', function(req, res){
     Rental.find({})
           .select('-bookings')
           .exec(function(err, foundRentals) {
-        res.json(foundRentals);
-    });
+            res.json(foundRentals);
+          });
 });
 
 router.get('/:id', function(req, res){
