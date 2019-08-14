@@ -39,8 +39,8 @@ export class AuthService {
 
   public login(userData: any): Observable<any> {
     return this.http.post('/api/v1/users/auth', userData).map(
-      (token) => {
-        return this.saveToken(JSON.stringify(token));
+      (token: string) => {
+        return this.saveToken(token);
       }
     );
   }
