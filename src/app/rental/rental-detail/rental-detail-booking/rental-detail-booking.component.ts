@@ -7,6 +7,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 import { DaterangePickerComponent } from 'ng2-daterangepicker';
 import * as moment from 'moment';
+import { AuthService } from '../../../auth/shared/auth.service'
 
 @Component({
   encapsulation: ViewEncapsulation.None,
@@ -44,7 +45,8 @@ export class RentalDetailBookingComponent implements OnInit {
     private modalService: NgbModal,
     private bookingService: BookingService,
     private toastr: ToastsManager,
-    private vcr: ViewContainerRef) { 
+    private vcr: ViewContainerRef,
+    public auth: AuthService) { 
     this.toastr.setRootViewContainerRef(vcr);
   }
 
