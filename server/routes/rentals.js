@@ -45,7 +45,7 @@ router.get('/:id', function(req, res){
 router.get('', function(req, res){
   const city = req.query.city;
   const query = city ? {city: city.toLowerCase()} : {}
-    Rental.find({})
+    Rental.find(query)
       .select('-bookings')
       .exec(function(err, foundRentals) {
 
