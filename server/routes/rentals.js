@@ -49,11 +49,11 @@ router.delete('/:id', UserCtrl.authMiddleWare, function(req, res) {
     .populate({
       path: 'bookings',
       select: 'startAt',
-      match: {startAt: {$ft: new Date()}}
+      match: {startAt: {$gt: new Date()}}
     })
     .exec(function(err, foundRental){
-      if(err){
-//            return res.status(422).send({errors:[{title: 'foundRental', detail:'Normalize errors'}]})
+
+      if (err) {
         return res.status(422).send({errors: normalizeErrors(err.errors)});
       }
 
@@ -69,6 +69,7 @@ router.delete('/:id', UserCtrl.authMiddleWare, function(req, res) {
         if(err){
           return res.status(422).send({errors: normalizeErrors(err.errors)});
         }
+
         return res.json({'status': 'deleted'})
       });
     });
