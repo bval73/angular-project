@@ -55,10 +55,8 @@ export class AuthService {
   public isExpired(): boolean{
 
     if(localStorage.getItem('bwm-auth')){  
-      console.log(this.jwt.isTokenExpired(localStorage.getItem('bwm-auth')));
       return this.jwt.isTokenExpired(localStorage.getItem('bwm-auth'));
     }else{
-      console.log('jwt is expired');
       return true;
     }
   }
