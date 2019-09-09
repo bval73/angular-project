@@ -1,4 +1,4 @@
 module.exports = {
-    DB_URI: 'mongodb+srv://test:testtest@cluster0-cx1xu.mongodb.net/bwm-prod?retryWrites=true&w=majority',
-    SECRET: 'nafipuhbrp'
+    DB_URI: process.env.DB_URI,
+    SECRET: process.env.SECRET
    }
