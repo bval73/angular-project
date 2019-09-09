@@ -27,10 +27,10 @@ export class MapComponent {
       (coordinates) => {
         this.lat = coordinates.lat;
         this.lng = coordinates.lng;
-
         this.ref.detectChanges();
       }, () =>{
         this.isPositionError = true;
+        this.ref.detectChanges();
       }
     );
   }
