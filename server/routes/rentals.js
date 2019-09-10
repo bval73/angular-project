@@ -49,7 +49,7 @@ router.delete('/:id', UserCtrl.authMiddleWare, function(req, res) {
     .populate({
       path: 'bookings',
       select: 'startAt',
-      match: {startAt: {$gt: new Date()}}
+      match: {endAt: {$gt: new Date()}}
     })
     .exec(function(err, foundRental){
 
