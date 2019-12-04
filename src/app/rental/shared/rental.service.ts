@@ -9,7 +9,7 @@ export class RentalService{
 
   }
 
-  public getRentalById(rentalId: number): Observable<any>{
+  public getRentalById(rentalId: string): Observable<any>{
     return this.http.get('/api/v1/rentals/' + rentalId);
   }
 
@@ -32,5 +32,14 @@ export class RentalService{
   public deleteRental(rentalId: string): Observable<any> {
     return this.http.delete(`/api/v1/rentals/${rentalId}`);
   }
+
+  public updateRental(rentalId: string, rentalData: any): Observable<any> {
+    return this.http.patch(`/api/v1/rentals/${rentalId}`, rentalData);
+  }
+
+  public verifyRentalUser(rentalId: string): Observable<any> {
+    return this.http.get(`/api/v1/rentals/${rentalId}/verify-user`);
+  }
 }
+
 
