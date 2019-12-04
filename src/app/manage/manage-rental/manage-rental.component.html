@@ -16,7 +16,9 @@
                <button (click)="rentalDeleteindex = i" 
                         *ngIf="rentalDeleteindex !== i"
                         type="button" 
-                        class="btn btn-bwm btn-delete">Delete</button>
+                        class="btn btn-bwm btn-delete">Delete
+                </button>
+                <a class="btn btn-warning btn-edit" routerLink="/rentals/{{rental._id}}/edit">Update Rental</a> 
                 <div *ngIf="rentalDeleteindex === i">
                   <p class="confirm-message">Do you want to delete?</p>
                   <button (click)="deleteRental(rental._id)" 
