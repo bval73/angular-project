@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ToastModule } from 'ng2-toastr/ng2-toastr';
+import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
@@ -29,8 +29,8 @@ const routes: Routes = [
     BrowserModule,
     RentalModule,
     AuthModule,
-    NgbModule.forRoot(),
-    ToastModule.forRoot(),
+    NgbModule,
+    ToastrModule.forRoot(),
     BrowserAnimationsModule,
     ManageModule
   ],

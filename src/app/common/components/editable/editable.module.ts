@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+
 import { ImageUploadModule } from '../image-upload/image-upload.module';
 
 import { EditableInputComponent } from './editable-input/editable-input.component';
