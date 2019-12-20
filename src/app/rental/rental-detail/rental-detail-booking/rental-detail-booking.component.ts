@@ -1,10 +1,10 @@
-import { Component, OnInit, Input, ViewContainerRef, ViewChild, ElementRef, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef, ViewEncapsulation } from '@angular/core';
 import { Booking } from '../../../booking/shared/booking.model';
 import { Rental } from '../../shared/rental.model';
 import { HelperService } from '../../../common/service/helper.service';
 import { BookingService } from '../../../booking/shared/booking.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+import { ToastrService } from 'ngx-toastr';
 import { DaterangePickerComponent } from 'ng2-daterangepicker';
 import * as moment from 'moment';
 import { AuthService } from '../../../auth/shared/auth.service'
@@ -19,10 +19,10 @@ import { AuthService } from '../../../auth/shared/auth.service'
 export class RentalDetailBookingComponent implements OnInit {
   @Input() rental: Rental;
 
-  @ViewChild(DaterangePickerComponent)
+  @ViewChild(DaterangePickerComponent, null)
     private picker: DaterangePickerComponent;
 
-  @ViewChild('bookingNoteTitle')
+  @ViewChild('bookingNoteTitle', null)
     private somePTag: ElementRef;
 
   newBooking: Booking;
@@ -44,10 +44,8 @@ export class RentalDetailBookingComponent implements OnInit {
   constructor(private helper: HelperService,
     private modalService: NgbModal,
     private bookingService: BookingService,
-    private toastr: ToastsManager,
-    private vcr: ViewContainerRef,
+    private toastr: ToastrService,
     public auth: AuthService) { 
-    this.toastr.setRootViewContainerRef(vcr);
   }
 
   ngOnInit() {

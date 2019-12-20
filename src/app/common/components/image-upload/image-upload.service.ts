@@ -1,5 +1,8 @@
+
+import {map} from 'rxjs/operators';
 import { Injectable } from '@angular/core';
-import { Response } from '@angular/http';
+//import { Response } from '@angular/http';
+//import { Response } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -13,7 +16,7 @@ public uploadImage(image: File): Observable<string | any> {
 
   formData.append('image', image);
 
-  return this.http.post('api/v1/image-upload', formData).map(((json: any) => json.imageUrl));
+  return this.http.post('api/v1/image-upload', formData).pipe(map(((json: any) => json.imageUrl)));
 //    .map((res: Response) => res.json())
 //    .map(json => json.imageUrl)
 }
