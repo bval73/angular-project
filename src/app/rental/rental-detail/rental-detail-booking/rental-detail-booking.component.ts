@@ -88,6 +88,11 @@ export class RentalDetailBookingComponent implements OnInit {
     this.bookedOutDates.push(...dateRange);
   }
   
+  onPaymentConfirmed(paymentToken: any) {
+   this.newBooking.paymentToken = paymentToken;
+  //  console.log('payment token');
+  //  console.log(this.newBooking.paymentToken);
+  }
 
   createBooking(){
     this.newBooking.rental = this.rental;
@@ -98,7 +103,7 @@ export class RentalDetailBookingComponent implements OnInit {
         this.newBooking = new Booking();
         this.modalRef.close();
         this.resetDatepicker();
-        this.toastr.success('Booking has been succesfuly created, check your booking detail in manage section', 'Toastr fun!');
+        this.toastr.success('Booking has been succesfuly created, check your booking detail in manage section', 'Booking successful');
        },
       (errorResponse) =>{
         this.errors = errorResponse.error.errors;

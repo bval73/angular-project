@@ -57,7 +57,7 @@ export class RentalUpdateComponent implements OnInit {
         if(rentalData.city || rentalData.street) {
           this.locationSubject.next(this.rental.city + ', ' + this.rental.street);
         }
-        console.log(updatatedRental);
+//        console.log(updatatedRental);
       },
       (errorResponse: HttpErrorResponse) => {
         this.toastr.error(errorResponse.error.errors[0].detail, 'Error');
