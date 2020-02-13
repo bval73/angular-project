@@ -17,6 +17,7 @@ import { RentalCreateComponent } from './rental-create/rental-create.component';
 import { RentalUpdateComponent } from './rental-update/rental-update.component';
 import { EditableModule } from '../common/components/editable/editable.module';
 import { ImageUploadModule } from '../common/components/image-upload/image-upload.module';
+import { PaymentModule } from '../payment/payment.module';
 
 import { RentalService } from './shared/rental.service';
 import { BookingService } from '../booking/shared/booking.service';
@@ -61,7 +62,8 @@ const routes: Routes = [
         Daterangepicker,
         FormsModule,
         EditableModule,
-        ImageUploadModule
+        ImageUploadModule,
+        PaymentModule
     ],
         
         providers:[
