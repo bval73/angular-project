@@ -8,7 +8,7 @@ const moment = require('moment');
 const config = require('../config');
 const stripe = require('stripe')(config.STRIPE_SK);
 
-const CUSTOMER_SHARE = 0.8; //20% fto me for my services for site. 
+const CUSTOMER_SHARE = 0.8; //20% for me for my services for site. 
 
 exports.createBooking = function(req, res){
     const { startAt, endAt, totalPrice, guests, days, rental, paymentToken } = req.body;
