@@ -45,6 +45,14 @@
         margin-bottom: 20px;
       }
 
+      &-rating{
+        font-size: 31px;
+        font-weight: bold;
+        > span {
+          color:#ff8a8a;
+        }
+      }
+
       &-room-info {
         margin-bottom: 20px;
         font-weight: 300;
@@ -65,7 +73,7 @@
 
       &-description {
         font-weight: 300;
-        margin-bottom: 30px;
+        margin-bottom: 5px;
       }
 
       &-assets {
